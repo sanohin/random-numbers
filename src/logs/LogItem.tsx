@@ -21,7 +21,7 @@ export const LogItem: React.FC<{ value: LogType; isCurrent: boolean }> = ({
   return (
     <View>
       <Text style={[styles.text, isCurrent && styles.current]}>
-       {value.number1} {value.number2} {value.number3}
+        {value.number1} {value.number2} {value.number3}
       </Text>
     </View>
   );
