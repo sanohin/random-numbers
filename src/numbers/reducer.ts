@@ -1,6 +1,6 @@
 import { GENERATE_RANDOM_NUMBERS } from "./actions";
 
-const createRandomNumber = () => Math.random();
+const createRandomNumber = () => Math.floor(Math.random() * 10);
 
 export const randomNumberReducer = (
   currentValue = createRandomNumber(),

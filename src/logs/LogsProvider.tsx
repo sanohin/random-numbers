@@ -9,6 +9,7 @@ export const ReduxLogsProvider: React.FC = ({ children }) => {
     ReactReduxContext
   );
   const [logs, setLogs] = React.useState<Array<RootState>>([]);
+
   if (!value) {
     throw new TypeError(
       "ReduxLogsProvider should be placed under react-redux provider"
@@ -18,7 +19,7 @@ export const ReduxLogsProvider: React.FC = ({ children }) => {
   React.useEffect(() => {
     const addValueToList = () => {
       const current = store.getState();
-      setLogs([...logs, current]);
+      setLogs((prevLogs) => [...prevLogs, current]);
     };
     // initial value
     addValueToList();

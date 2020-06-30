@@ -1,18 +1,27 @@
 import * as React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { useLogs } from "./LogsProvider";
 
 type LogType = ReturnType<typeof useLogs>[0];
 
-export const LogItem: React.FC<{ value: LogType; index: number }> = ({
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 18,
+  },
+  current: {
+    color: "#d32f2f",
+    textDecorationLine: "underline",
+  },
+});
+
+export const LogItem: React.FC<{ value: LogType; isCurrent: boolean }> = ({
   value,
-  index,
+  isCurrent,
 }) => {
   return (
     <View>
-      <Text>
-        {index}. number1: {value.number1}, number2: {value.number2}, number3:{" "}
-        {value.number3}
+      <Text style={[styles.text, isCurrent && styles.current]}>
+       {value.number1} {value.number2} {value.number3}
       </Text>
     </View>
   );
