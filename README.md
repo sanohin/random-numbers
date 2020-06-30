@@ -8,6 +8,6 @@ Technologies:
 - Redux
 
 This app uses Expo, steps to run the project:
-- yarn
-- yarn ios (yarn android)
+- `yarn`
+- `yarn ios` (`yarn android`)
 - open Expo application (it may not open automatically and can be installed on the second screen)
